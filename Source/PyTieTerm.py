@@ -32,8 +32,9 @@ while True:
         CBP("ERR_KEEP_UP")
 
     elif cmd == "mkfile":
-        print("This feature is currently in development, please wait for it to be released \n")
-        CBP("ERR_KEEP_UP")
+        filename = input("File Name: ")
+        os.system('touch ' + filename)
+
 #        print("This feature is currently in development, please wait for it to be released")
 #        print("Welcome to MKFile (make file) function which makes a text file. \n \n lets make a new file. first select a name")
 #        Filename = "/workspaces/PieTie_Python_Terminal/Source/text.txt".join((input("Enter a name: ")))
@@ -70,8 +71,12 @@ while True:
     elif cmd == "errdisplay":
         print("ERR_KEEP_UP\n   This error means that this feature is either depricated, or not finished.\n to stop any errors out of development we use a CBP to replace the function to make sure the TERMINAL isnt effected.")
 
-    elif cmd == "":
-        print("Placeholder")
+    elif cmd == "cd":
+        cddir = input("Directory (use .. to go back): ")
+        os.system('cd ' + cddir)
+
+    elif cmd == "run":
+        print("")
 
     elif cmd == "placeholdercommand":
         print("Placeholder")
@@ -103,7 +108,5 @@ while True:
     elif cmd == "placeholdercommand":
         print("Placeholder")
 
-    elif cmd == "placeholdercommand":
-        print("Placeholder")
     elif cmd == "":
         print("")
