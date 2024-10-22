@@ -1,9 +1,77 @@
 import os
+import warnings as wrn
+import sys
+#This is a simple yet advanced version checker, if you have a server and this is an api you can use
+#that to check for the latest veersion using the internet. otherwise go to every older
+#version of your file and update it so it has the latest version for example
+#file1: SUPERCOOLAPI_VER_1.0.0
+
+#file2: SUPERCOOLAPI_VER_2.0.0_NEWRELEASE
+ostype = sys.platform
+print(ostype)
+if ostype == "win32":
+    os.system("cls")
+elif ostype == "linux" or "linux2":
+    os.system("clear")
+termon = False
+
+    #startprogram(1)
+    #or
+    #running = True
+
+
+    #insert start code or continue code here. if its run using a loop like a program so it doesnt stop
+    #set your running var to true
+    #example
+    #
+    # while running == True:
+    #   print("HAHAHHAHA")
+    #   #Some more code.. program... hahha
+    #   
+    #
+    #
+    #
+
+
+# os.system("clear")
+
+currentversion = "V0.0.1DEV"
+newestversion = "V0.0.3ALPH"
+newestdevversion = "V0.0.3ALPHDEV"
+#optional to activate 🠇🠇🠇🠇
+print("newest version of [API Or Application]: " + newestversion)
+print("newest dev version of [API Or Application]: " + newestdevversion)
+print("os: " + ostype)
+#optional to activate 🠅🠅🠅🠅 (delete or place # before code strings)
+def ChkVersion(version, newest, newestdev, msg_ChkVer, msg_U2D, msg_XU2D, msg_CONTINUE, ms_NOCONTINUE, deperr):
+    print(msg_ChkVer)
+    if version == newest:
+        print(msg_U2D)
+    elif version == newestdev:
+        print("You are using an INDEV version! these may be unstable and are uploaded every time a change is made!!!")
+    elif version != newest:
+        print(msg_XU2D)
+        continu = input("would you like to continue? (Y/N): ")
+        if continu == "Y":
+            print(msg_CONTINUE)
+            
+        if continu != "Y":
+            print(ms_NOCONTINUE)
+            wrn.warn(deperr, DeprecationWarning)
+            
+#Great! now lets test it!
+
+ChkVersion(currentversion, newestversion, newestdevversion, "Checking version...", "Your version is Up 2 Date! :)", "Oops your version isnt up to date!", "Rightyo. Continueing!", "Displaying error", "Deprication error: This [something] is not up to date (latest version[latest version]) please update")
+
+#When getting latest version from a server use a network api to get it. replace variable 
+#newest version with some code that connects to the server and gets the version
+#im not rich so i dont have a server to show you with
+
 
 termon = True
 
 os.system('clear')
-print("   |\---/| \n   | ,_, |\n    \_w_/-..----.\n ___/ `   ' ,""+ \  BC\n(__...'   __\    |`.___.';\n  (_,...'(_,.`__)/'.....+\n\n Welcome to PyTie_TERMON Nya~ \n PyTie_TERMON, Better known as TERMON is a use friendly command prompt powered terminal, made in python\n by a guy with no coding expirience in python...\n Im BoxCat the terminals mascot. i like to run things around here \n Type help for help NOTE: TERMON is CASE SENSITIVE meaning commands need to be the exact capitalization as displayed!\n\n")
+print("   |\---/| \n   | ,_, |\n    \_w_/-..----.\n ___/ `   ' ,""+ \    \n(__...'   __\    |`.___.';\n  (_,...'(_,.`__)/'.....+\n\n Welcome to PyTie_TERMON Nya~ \n PyTie_TERMON, Better known as TERMON is a use friendly command prompt powered terminal, made in python\n by a guy with no coding expirience in python...\n Im BoxCat the terminals mascot. i like to run things around here \n Type help for help NOTE: TERMON is CASE SENSITIVE meaning commands need to be the exact capitalization as displayed!\n\n")
 
 def CBP(reason):
         BSODerror = reason

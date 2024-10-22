@@ -1,0 +1,14 @@
+remembered file structure exists.
+got rid of some random repository code.
+Created basic name structure
+
+PyTieCLI_V(version)###(bassically the same as #.#.# without the periods)DEV/ALPH/BETA/FULL(Type identifier. Development. Alpha. Full. can combine)
+
+started adding changelogs
+
+FIRST CHANGELOG
+12:52PM EST, OCT 21 2024
+SECOND CHANGELOG
+12:53PM EST, OCT 21 2024
+THIRD CHANGELOG
+12:53PM EST, OCT 21 2024
