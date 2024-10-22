@@ -1,9 +1,0 @@
-LOG CLEARED----log break--------------
-os: linuxusename: user
-
---------------log break--------------
-os: linuxusename: test
-CALLBACKPING(bsod) initiated by systemfor AAAAA1
---------------log break--------------
-os: linuxusename: cd..
-CALLBACKPING(bsod) initiated by [intentional system design] for AAAAA1
