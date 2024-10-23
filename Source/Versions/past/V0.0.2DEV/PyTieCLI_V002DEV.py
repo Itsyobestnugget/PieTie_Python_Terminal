@@ -37,8 +37,8 @@ termon = False
 # os.system("clear")
 
 currentversion = "V0.0.2DEV"
-newestversion = "V0.0.3ALPH"
-newestdevversion = "V0.0.3ALPHDEV"
+newestversion = "V0.1.0BETADEV"
+newestdevversion = "V0.1.0BETADEV"
 #optional to activate 🠇🠇🠇🠇
 print("newest version of [API Or Application]: " + newestversion)
 print("newest dev version of [API Or Application]: " + newestdevversion)

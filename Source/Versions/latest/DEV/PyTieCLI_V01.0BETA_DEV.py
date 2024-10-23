@@ -1,8 +1,9 @@
 import os
-import random
 import warnings as wrn
 import sys
 import datetime
+from Plugins.builtin.ai_models import ailaunguagemodel_gemini as gemai
+from Plugins.builtin.AdvancedTerminalBSODem import CPB as cbp
 
 os.system
 #This is a simple yet advanced version checker, if you have a server and this is an api you can use
@@ -11,32 +12,6 @@ os.system
 #file1: SUPERCOOLAPI_VER_1.0.0
 
 
-# Error codes
-err = "NOERR_"
-err_desc = "Test/base error. also fallback. Unkown"
-err1 = "AAAAA1"
-err1_desc = "KEEPUP. Version not up to date."
-err2 = "AAAAA2"
-err2_desc = ""
-err3 = "AAAAA3"
-err3_desc = ""
-err4 = "AAAAA4"
-err4_desc = ""
-err5 = "AAAAA5"
-err5_desc = ""
-err6 = "AAAAA6"
-err6_desc = ""
-err7 = "AAAAA7"
-err7_desc = ""
-err8 = "AAAAA8"
-err8_desc = ""
-err9 = "AAAAA9"
-err9_desc = ""
-err10 = "AAAAB0"
-err10_desc = ""
-fallbackerr = err
-fallbackerr_desc = err_desc
-# Error codes end
 
 
 
@@ -69,9 +44,9 @@ termon = False
 
 # os.system("clear")
 
-currentversion = "V0.0.3ALPHDEV"
-newestversion = "V0.0.3ALPH"
-newestdevversion = "V0.0.3ALPHDEV"
+currentversion = "V0.1.0BETADEV"
+newestversion = "V0.1.0BETADEV"
+newestdevversion = "V0.1.0BETADEV"
 #optional to activate 🠇🠇🠇🠇
 print("newest version of [API Or Application]: " + newestversion)
 print("newest dev version of [API Or Application]: " + newestdevversion)
@@ -88,10 +63,10 @@ def ChkVersion(version, newest, newestdev, msg_ChkVer, msg_U2D, msg_XU2D, msg_CO
         continu = input("would you like to continue? (Y/N): ")
         if continu == "Y":
             print(msg_CONTINUE)
-            
         if continu != "Y":
             print(ms_NOCONTINUE)
             wrn.warn(deperr, DeprecationWarning)
+            quit()
             
 #Great! now lets test it!
 
@@ -105,26 +80,21 @@ dateofrun = datetime.date.strftime
 timeofrun = datetime.time.strftime
 termon = True
 user = input("USERNAME: ")
-f = open("pytieclilog.log", "r")
+f = open("pytieclilog.log", "+a")
 f.close
 log = open("pytieclilog.log", "a")
 log.write("\n--------------log break--------------")
 log.write("\nos: " + ostype)
 log.write("usename: " + user)
-log.write("\n")
+log.write("\n Installing libraries (if its already installed it will simply fail or update. ignore)")
+os.system("pip install google-generativeai")
+os.system("pip update google-generativeai")
+log.write("\n done")
 log.close
 os.system('clear')
 print("   |\---/| \n   | ,_, |\n    \_w_/-..----.\n ___/ `   ' ,""+ \  BC\n(__...'   __\    |`.___.';\n  (_,...'(_,.`__)/'.....+\n\n Welcome to PyTie_TERMON Nya~ \n PyTie_TERMON, Better known as TERMON is a use friendly command prompt powered terminal, made in python\n by a guy with no coding expirience in python...\n Im BoxCat the terminals mascot. i like to run things around here \n Type help for help NOTE: TERMON is CASE SENSITIVE meaning commands need to be the exact capitalization as displayed!\n\n")
 
-def CBP(reason, user):
-        BSODerror = reason
-        print("\n \nCALLBACKPING")
-        print("  ,-.       _,---._ __  / \ \n /  )    .-'       `./ /   \ \n(  (   ,'            `/    /|                         \n  `.              ,  \ \ /  | \n   /`.          ,'-`----Y   | \n  (            ;        |   ' \n  |  ,-.    ,-'         |  / \n  |  | (   |    oops... | / \n  )  |  \  `.___________|/ \n  `--'   `--') \n \n Apparently, the terminal ran into a problem... thats not good\n this would be where we would collect data. its being written to a log file, see reason for crash below \n \n")
-        print("🠇🠇🠇 Reason 🠇🠇🠇\n")
-        print(BSODerror)
-        print("\n🠅🠅🠅 Reason 🠅🠅🠅")
-        log.write("CALLBACKPING(bsod) initiated by " + user + " for " + reason)
-        exit()
+
 def IPip(command, options, flags):
     os.system("pip " + command + " " + options + " " + flags)
 
@@ -144,7 +114,7 @@ while True:
         
 
     elif cmd == "cd ..":
-        CBP(err1, "[intentional system design]")
+        cbp.CBP(err1, "[intentional system design]")
 
     elif cmd == "mkfile":
         filename = input("File Name: ")
@@ -172,7 +142,6 @@ while True:
 
 
     elif cmd == "readfile":
-        
         fileopen = open(input("File.. with dir eg /workspaces/PieTie_Python_Terminal/Source/File.txt   : "), "r")
         print(fileopen.read())
 
@@ -214,26 +183,9 @@ while True:
         logclr.write("LOG CLEARED\n")
         logclr.close
     
-    elif cmd == "placeholdercommand":
-        print("Placeholder")
-
-    elif cmd == "placeholdercommand":
-        print("Placeholder")
-
-    elif cmd == "placeholdercommand":
-        print("Placeholder")
-
-    elif cmd == "placeholdercommand":
-        print("Placeholder")
-
-    elif cmd == "placeholdercommand":
-        print("Placeholder")
-
-    elif cmd == "placeholdercommand":
-        print("Placeholder")
-
-    elif cmd == "placeholdercommand":
-        print("Placeholder")
-
-    elif cmd == "":
+    elif cmd == "BCHAT":
         print("")
+        gemai.sendrequest(input("You: "))
+    
+    
+        
